@@ -1,10 +1,14 @@
 # istio-demo-app
-Deploying an istio-demo bookinfo app on kubernetes
 
+#### Deploying an istio-demo bookinfo app on kubernetes
 
 kubectl apply -f book.yaml
 
 kubectl  apply -f book-gateway.yaml
+
+kubectl  apply -f virtual-service-all-v1.yaml
+
+kubectl apply -f destination-rule-all.yaml
 
 #### Check pods:
 kubectl  get pods
