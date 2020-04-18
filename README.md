@@ -6,16 +6,16 @@ kubectl apply -f book.yaml
 
 kubectl  apply -f book-gateway.yaml
 
-##### Check pods:
+#### Check pods:
 kubectl  get pods
 
-##### Check gateway:
+#### Check gateway:
 kubectl  get svc istio-ingressgateway -n istio-system
 
-##### Check pods have proxy auto-injected
+#### Check pods have proxy auto-injected
 kubectl describe pods -l app=productpage
 
-##### Check proxy processes for the product page
+#### Check proxy processes for the product page
 docker container ls --filter name=istio-proxy_productpage* -q
 
 docker container top $(docker container ls --filter name=istio-proxy_productpage* -q)
