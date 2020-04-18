@@ -21,4 +21,5 @@ kubectl describe pods -l app=productpage
 #### Check proxy processes for the product page
 docker container ls --filter name=istio-proxy_productpage* -q
 
-docker container top $(docker container ls --filter name=istio-proxy_productpage* -q)
+docker container top $(docker contai
+ner ls --filter name=istio-proxy_productpage* -q)
