@@ -4,7 +4,7 @@
 curl -L https://istio.io/downloadIstio | sh -
 cd istio-1.5.1
 export PATH=$PWD/bin:$PATH
-export PATH="$PATH:/root/istio-demo-app/istio-1.5.1/bin
+export PATH="$PATH:/root/istio-demo-app/istio-1.5.1/bin"
 
 # Demo configuration profile
 istioctl manifest apply --set profile=demo
@@ -22,7 +22,7 @@ kubectl get services
 kubectl get pods
 
 # Associate the application with Istio gateway to accessible from outside
-kubectl apply -f $HOME/book-gateway.yaml
+kubectl apply -f $HOME/ingress-gateway.yaml
 
 # Verify that the app is running inside the cluster and serving HTML pages by checking for the page title in the response
 kubectl exec -it $(kubectl get pod -l app=ratings -o jsonpath='{.items[0].metadata.name}') -c ratings -- curl productpage:9080/productpage | grep -o "<title>.*</title>"
