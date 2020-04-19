@@ -3,6 +3,7 @@ kind: Gateway
 metadata:
   name: bookinfo-gateway
 spec:
+  type: NodePort
   selector:
     istio: ingressgateway # use istio default controller
   servers:
@@ -10,6 +11,8 @@ spec:
       number: 80
       name: http
       protocol: HTTP
+      targetPort: 80
+      nodePort: 30007
     hosts:
     - "*"
 ---
