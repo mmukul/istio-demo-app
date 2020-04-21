@@ -3,25 +3,25 @@
 This sample includes two versions of a simple helloworld service that returns its version
 and instance (hostname) when called.It can be used as a test service when experimenting with version routing.
 
-## Start the helloworld-demo service
+## Start the helloworld service
 
 To run both versions of the helloworld service, use the following command:
 
 ```bash
-kubectl apply -f helloworld-demo.yaml
+kubectl apply -f helloworld.yaml
 ```
 
 Alternatively, you can run just one version at a time by first defining the service:
 
 ```bash
-kubectl apply -f helloworld-demo.yaml -l app=helloworld
+kubectl apply -f helloworld.yaml -l app=helloworld
 ```
 
 and then deploying version v1, v2, or both:
 
 ```bash
-kubectl apply -f helloworld-demo.yaml -l version=v1
-kubectl apply -f helloworld-demo.yaml -l version=v2
+kubectl apply -f helloworld.yaml -l version=v1
+kubectl apply -f helloworld.yaml -l version=v2
 ```
 
 ## Configure the helloworld-demo gateway
@@ -29,7 +29,7 @@ kubectl apply -f helloworld-demo.yaml -l version=v2
 Apply the helloworld gateway configuration:
 
 ```bash
-kubectl apply -f helloworld-demo-gateway.yaml
+kubectl apply -f helloworld-gateway.yaml
 ```
 
 to set the INGRESS_HOST and INGRESS_PORT variables and then confirm the sample is running using curl:
