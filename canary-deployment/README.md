@@ -49,6 +49,12 @@ kubectl autoscale deployment helloworld-v2 --cpu-percent=50 --min=1 --max=10
 kubectl get hpa
 ```
 
+Now generate some load on the helloworld service, we would notice that when scaling begins, the v1 autoscaler will scale up its replicas significantly higher than the v2 autoscaler replicas because v1 pods are handling 90% of the load.
+
+~~~bash
+kubectl get pods | grep helloworld
+~~~
+
 ## Cleanup
 
 ```bash
