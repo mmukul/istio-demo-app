@@ -41,9 +41,6 @@ curl http://$GATEWAY_URL/hello
 
 ## Autoscale the services
 
-Note that a Kubernetes "Horizontal Pod Autoscaler" only works if all containers in the pods request cpu. In this sample the deployment containers in `helloworld.yaml` are configured with the request.
-The injected istio-proxy containers also include cpu requests,making the helloworld service ready for autoscaling.
-
 Enable autoscaling on both versions of the service:
 
 ```bash
